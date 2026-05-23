@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PaperPal Assistant Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="desktop" aria-label="Desktop assistant prototype">
+      <section class="assistant-stage" id="assistantStage" aria-label="PaperPal desktop assistant">
+        <div class="paper" aria-hidden="true">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+          <span class="line line-4"></span>
+          <span class="line line-5"></span>
+          <span class="line line-6"></span>
+          <span class="margin-line"></span>
+        </div>
+
+        <button class="paperclip" id="paperclip" aria-label="Wake PaperPal">
+          <span class="clip-shadow"></span>
+          <span class="clip clip-outer"></span>
+          <span class="clip clip-inner"></span>
+          <span class="stem stem-left"></span>
+          <span class="stem stem-right"></span>
+          <span class="eye eye-left"><span></span></span>
+          <span class="eye eye-right"><span></span></span>
+          <span class="brow brow-left"></span>
+          <span class="brow brow-right"></span>
+        </button>
+      </section>
+
+      <section class="chat-panel" aria-label="Assistant chat">
+        <header>
+          <div>
+            <p class="eyebrow">PaperPal</p>
+            <h1>Ask anything</h1>
+          </div>
+          <div class="status" id="status">Idle</div>
+        </header>
+
+        <div class="messages" id="messages" aria-live="polite">
+          <article class="message assistant-message">
+            Hi, I am PaperPal. I can sit on the desktop, animate while listening, and answer questions once connected to an AI backend.
+          </article>
+        </div>
+
+        <form class="composer" id="composer">
+          <input id="prompt" name="prompt" autocomplete="off" placeholder="Ask me anything..." />
+          <button type="submit">Ask</button>
+        </form>
+
+        <div class="controls" aria-label="Animation controls">
+          <button type="button" data-mode="idle">Idle</button>
+          <button type="button" data-mode="listen">Listen</button>
+          <button type="button" data-mode="think">Think</button>
+          <button type="button" data-mode="celebrate">Celebrate</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
