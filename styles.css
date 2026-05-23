@@ -49,60 +49,54 @@ input {
   min-height: 34rem;
   display: grid;
   place-items: center;
-  perspective: 72rem;
-  transform-style: preserve-3d;
 }
 
 .paper {
   position: absolute;
-  width: min(31rem, 72vw);
-  aspect-ratio: 1.22;
-  transform: translateY(2.2rem) rotateZ(8deg) skewY(-7deg) rotateX(8deg);
-  transform-origin: 50% 62%;
-  transform-style: preserve-3d;
-  border-radius: 0.35rem 2.5rem 0.7rem 3rem;
+  width: min(32rem, 76vw);
+  aspect-ratio: 1.28;
+  transform: translateY(5.1rem) rotate(-7deg);
+  transform-origin: center;
+  clip-path: polygon(15% 4%, 100% 17%, 82% 96%, 0 76%);
+  border-radius: 0.8rem;
   background:
-    radial-gradient(circle at 72% 26%, rgba(255, 255, 255, 0.34), transparent 7rem),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.36), transparent 32%),
-    linear-gradient(90deg, transparent 0 4.5rem, rgba(225, 108, 83, 0.45) 4.55rem 4.68rem, transparent 4.75rem),
-    linear-gradient(180deg, transparent 0 2.4rem, var(--paper-line) 2.48rem 2.56rem, transparent 2.64rem),
+    radial-gradient(ellipse at 75% 18%, rgba(236, 205, 58, 0.46) 0 13%, transparent 28%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), transparent 34%),
+    linear-gradient(90deg, transparent 0 5rem, rgba(225, 108, 83, 0.52) 5.08rem 5.22rem, transparent 5.32rem),
+    repeating-linear-gradient(180deg, transparent 0 2.45rem, var(--paper-line) 2.5rem 2.58rem, transparent 2.64rem 3.2rem),
     var(--paper);
   box-shadow:
-    0.55rem 0.7rem 0 #d4c965,
-    0.95rem 1.1rem 0 #c4b958,
-    2rem 2.6rem 3.2rem rgba(6, 38, 50, 0.42);
+    0.8rem 0.85rem 0 #d6ca58,
+    1.35rem 1.45rem 0 #bbb046,
+    2.3rem 3rem 3.8rem rgba(5, 35, 47, 0.44);
   overflow: hidden;
   z-index: 0;
 }
 
-.paper::before {
-  content: "";
-  position: absolute;
-  inset: auto auto -0.2rem 0;
-  width: 100%;
-  height: 0.7rem;
-  border-radius: 0 0 0.7rem 3rem;
-  background: linear-gradient(90deg, #d4c75b, #f1e787 22%, #c3b750);
-  transform: translateZ(-0.55rem);
-}
-
+.paper::before,
 .paper::after {
   content: "";
   position: absolute;
-  inset: -2.7rem -2rem auto auto;
-  width: 12rem;
-  height: 9rem;
+}
+
+.paper::before {
+  inset: auto 5% 10% 5%;
+  height: 1.1rem;
+  background: rgba(222, 210, 91, 0.65);
+  filter: blur(0.35rem);
+}
+
+.paper::after {
+  inset: 10% 3% auto auto;
+  width: 10rem;
+  height: 5rem;
   border-radius: 50%;
-  background: rgba(238, 216, 90, 0.65);
-  transform: rotate(-18deg);
+  background: rgba(239, 211, 72, 0.4);
+  transform: rotate(7deg);
 }
 
 .line {
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 0.08rem;
-  background: var(--paper-line);
+  display: none;
 }
 
 .line-1 { top: 5.1rem; }
@@ -120,22 +114,21 @@ input {
   background: transparent;
   cursor: pointer;
   transform-origin: 50% 82%;
-  transform-style: preserve-3d;
-  filter: drop-shadow(0.7rem 1.1rem 0.45rem rgba(11, 35, 42, 0.24));
+  filter: drop-shadow(0.55rem 0.85rem 0.35rem rgba(11, 35, 42, 0.22));
   animation: idle-bob 3.6s ease-in-out infinite;
   z-index: 3;
 }
 
 .clip-shadow {
   position: absolute;
-  left: 4rem;
-  top: 14.5rem;
-  width: 9.2rem;
-  height: 5rem;
+  left: 3.2rem;
+  top: 15.9rem;
+  width: 10.6rem;
+  height: 4.2rem;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(20, 33, 35, 0.26), transparent 70%);
-  filter: blur(0.35rem);
-  transform: rotateZ(11deg);
+  background: radial-gradient(ellipse, rgba(20, 33, 35, 0.24), transparent 72%);
+  filter: blur(0.42rem);
+  transform: rotateZ(6deg);
   z-index: -1;
 }
 
@@ -459,8 +452,8 @@ h1 {
   }
 
   .paper {
-    width: min(27rem, 86vw);
-    transform: translateY(1.6rem) rotateZ(8deg) skewY(-7deg) rotateX(8deg);
+    width: min(27rem, 88vw);
+    transform: translateY(4.3rem) rotate(-7deg);
   }
 
   .paperclip {
